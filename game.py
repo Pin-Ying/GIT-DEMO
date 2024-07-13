@@ -2,7 +2,7 @@ import random
 
 x = random.randint(1, 50)
 print(x)
-times = 5
+times = 15
 
 for i in range(1, times + 1):
     y = eval(input("請猜一個數字: "))
