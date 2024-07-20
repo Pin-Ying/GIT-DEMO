@@ -1,0 +1,124 @@
+### 版本查詢
+- git version
+
+### 寫入使用者資訊
+- git config --global user.name XXX
+- git config --global user.email xxx@ccc.com
+
+### 顯示設定資訊
+- git config --list
+
+### 將目錄新增版本控管
+- git init
+
+### 檔案狀態
+- U (Untrack) 未被控管
+- A (Added) 已加入控管
+- M (Modified) 
+
+### 控管狀態
+- git status
+
+### 將資料加入控管
+- git add <filename>
+- git add . (將該目錄下所有資料加入)
+
+### 查詢經sha-1編碼後object內部資料
+- git cat -file -p sha-1 xxxxxx(至少四碼，目錄+檔案名稱) 查看內容
+- git cat -file -t sha-1 xxxxxx(至少四碼，目錄+檔案名稱) 查看資料種類
+
+### 檢視暫存區的檔案
+- git ls-files -s
+
+### 將暫存區資料儲存到倉庫
+- git commit -m "message"
+
+### 提交後產生兩個object
+	- commit (sha-1)
+		- tree (sha-1)
+			- files
+### 檢視Git提交紀錄
+- git log
+- git log --oneline
+
+### 使用vim編輯器
+
+- git commit
+	- i(Insert) => 進入編輯模式
+	- esc => 跳出編輯模式
+		- :wq => 寫入資料後離開 
+
+### commit 預設儲存指向 Master 分支
+	- HEAD 永遠會指向分支最新的 commit object
+
+### 自動刪除檔案
+- git rm -f <filename>
+
+### 資料被刪除後：
+
+1.恢復資料
+	- git restore 
+	- git restore --stage <filename> (恢復至暫存區)
+
+2.確認刪除
+	- git add
+
+### 將檔案解除控管(移出暫存區or倉庫區)
+- git rm --cached <filename>
+
+### 檢視分支狀態
+- git branch
+
+	###新增分支
+	- git branch <branch-name>
+
+	### 修改分支名稱
+	- git branch -m <branch-old-name> <branch-new-name>
+
+	### 刪除分支
+	- git branch -D <branch-name>
+
+### 切換分支/commit
+- git checkout <branch-name>
+- git checkout commit-object
+
+!!! 切換到到commit的修改，需產生新分支，才能將修改儲存 !!!
+
+	### 新增分支的同時切換分支
+	- git checkout -b <branch-name>
+
+### 合併分支，先切換到欲進行合併的主分支
+- git merge <branch-name>
+
+	### 取消合併分支
+	- git merge --abort
+
+	### 衝突合併(需確認以哪份檔案為主)
+
+### 回到先前commit的狀態
+- git reset commit-object
+- git reset --hard commit-object
+
+### 顯示所有的歷程
+- git reflog
+
+### 統整修改資料後恢復方法
+- git checkout .
+- git reset --hard HEAD
+- git reset --hard HEAD~1  =>回復到HEAD所指的commit之前一個commit
+- git reset --hard ORIG_HEAD  =>回復到前一個HEAD所指的commit
+
+### 檢視遠端的倉庫url
+- git remote -v
+- git remote add origin https://github.com/Pin-Ying/git-demo-1.git
+
+### 本地端推送往遠端倉庫
+- git push -u origin master =>第一次遠端沒有建立master分支，要同時建立(- git push --set-upstream origin master)
+- git push
+
+### 新增README.md跟.gitignore
+
+### 從遠端將資料送至本地端
+- git clone <url>
+- 從Github下載壓縮檔，但不包含.git
+
