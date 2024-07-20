@@ -17,3 +17,5 @@ for i in range(1, times + 1):
         else:
             print("猜低一點")
     print(f"剩{times-i}次機會")
+
+print("GameOver")
