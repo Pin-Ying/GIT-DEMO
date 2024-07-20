@@ -32,6 +32,7 @@
 
 ### 將暫存區資料儲存到倉庫
 - git commit -m "message"
+- git commit --amend => 修改上次的commit
 
 ### 提交後產生兩個object
 	- commit (sha-1)
@@ -110,7 +111,7 @@
 
 ### 檢視遠端的倉庫url
 - git remote -v
-- git remote add origin https://github.com/Pin-Ying/git-demo-1.git
+- git remote add origin <Repositor-url>
 
 ### 本地端推送往遠端倉庫
 - git push -u origin master =>第一次遠端沒有建立master分支，要同時建立(- git push --set-upstream origin master)
@@ -119,6 +120,6 @@
 ### 新增README.md跟.gitignore
 
 ### 從遠端將資料送至本地端
-- git clone <url>
+- git clone <Repositor-url>
 - 從Github下載壓縮檔，但不包含.git
-
+- git pull
